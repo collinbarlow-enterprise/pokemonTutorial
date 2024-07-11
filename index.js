@@ -45,22 +45,22 @@ battleZonesMap.forEach((row, i) =>
     }))
 
 const image = new Image()
-image.src = './images/PokemonStyleGameMap.png'
+image.src = './images/PokemonStyleGameMap.png';
 
 const foregroundImage = new Image()
-foregroundImage.src = './images/foregroundObjects.png'
+foregroundImage.src = './images/foregroundObject.png';
 
 const playerDownImage = new Image()
-playerDownImage.src = './images/playerDown.png'
+playerDownImage.src = './images/playerDown.png';
 
 const playerUpImage = new Image()
-playerUpImage.src = './images/playerUp.png'
+playerUpImage.src = './images/playerUp.png';
 
 const playerLeftImage = new Image()
-playerLeftImage.src = './images/playerLeft.png'
+playerLeftImage.src = './images/playerLeft.png';
 
 const playerRightImage = new Image()
-playerRightImage.src = './images/playerRight.png'
+playerRightImage.src = './images/playerRight.png';
 
 // onload, calls the draw image method, if put outside the drawImage will be called prior to the image being loaded in 
 
@@ -134,6 +134,7 @@ function animate() {
     // takes one argument, and is a function you want to call recursively
     const animationId = window.requestAnimationFrame(animate)
     background.draw();
+    console.log(background, 'background')
     boundaries.forEach(boundary => {
         boundary.draw();
 
@@ -141,8 +142,11 @@ function animate() {
     battleZones.forEach(battleZone => {
         battleZone.draw();
     })
-    foreground.draw();
     player.draw();
+console.log(player, 'player')
+    foreground.draw();
+    console.log(foreground, 'foreground')
+    
 
     let moving = true
     player.animate = false
