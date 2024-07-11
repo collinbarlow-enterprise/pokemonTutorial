@@ -141,8 +141,8 @@ function animate() {
     battleZones.forEach(battleZone => {
         battleZone.draw();
     })
-    player.draw();
     foreground.draw();
+    player.draw();
 
     let moving = true
     player.animate = false
